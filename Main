@@ -71,7 +71,7 @@ ImageButton.BackgroundColor3 = _G.Dark;
 ImageButton.ImageColor3 = Color3.fromRGB(250, 250, 250);
 ImageButton.ImageTransparency = 0;
 ImageButton.BackgroundTransparency = 0;
-ImageButton.Image = "rbxassetid://13940080072";
+ImageButton.Image = "rbxasset://102732484581219";
 ImageButton.AutoButtonColor = false;
 MakeDraggable(ImageButton, OutlineButton);
 CreateRounded(ImageButton, 10);
@@ -128,7 +128,7 @@ function Update:Notify(desc)
 	Image.BackgroundTransparency = 1;
 	Image.Position = UDim2.new(0, 8, 0, 8);
 	Image.Size = UDim2.new(0, 45, 0, 45);
-	Image.Image = "rbxassetid://13940080072";
+	Image.Image = "rbxasset://13940080072";
 	Title.Parent = Frame;
 	Title.BackgroundColor3 = _G.Primary;
 	Title.BackgroundTransparency = 1;
@@ -313,10 +313,10 @@ function Update:Window(Config)
 	assert(Config.SubTitle, "v4");
 	local WindowConfig = {
 		Size = Config.Size,
-		TabWidth = Config.TabWidth
+		TabWth = Config.TabWth
 	};
 	local osfunc = {};
-	local uihide = false;
+	local uihe = false;
 	local abc = false;
 	local currentpage = "";
 	local keybind = keybind or Enum.KeyCode.RightControl;
@@ -407,7 +407,7 @@ function Update:Window(Config)
 	CloseButton.AnchorPoint = Vector2.new(1, 0.5);
 	CloseButton.Position = UDim2.new(1, -15, 0.5, 0);
 	CloseButton.Size = UDim2.new(0, 20, 0, 20);
-	CloseButton.Image = "rbxassetid://7743878857";
+	CloseButton.Image = "rbxasset://7743878857";
 	CloseButton.ImageTransparency = 0;
 	CloseButton.ImageColor3 = Color3.fromRGB(245, 245, 245);
 	CreateRounded(CloseButton, 3);
@@ -422,7 +422,7 @@ function Update:Window(Config)
 	ResizeButton.AnchorPoint = Vector2.new(1, 0.5);
 	ResizeButton.Position = UDim2.new(1, -50, 0.5, 0);
 	ResizeButton.Size = UDim2.new(0, 20, 0, 20);
-	ResizeButton.Image = "rbxassetid://10734886735";
+	ResizeButton.Image = "rbxasset://10734886735";
 	ResizeButton.ImageTransparency = 0;
 	ResizeButton.ImageColor3 = Color3.fromRGB(245, 245, 245);
 	CreateRounded(ResizeButton, 3);
@@ -456,7 +456,7 @@ function Update:Window(Config)
 	CloseSettings.AnchorPoint = Vector2.new(1, 0);
 	CloseSettings.Position = UDim2.new(1, -20, 0, 15);
 	CloseSettings.Size = UDim2.new(0, 20, 0, 20);
-	CloseSettings.Image = "rbxassetid://10747384394";
+	CloseSettings.Image = "rbxasset://10747384394";
 	CloseSettings.ImageTransparency = 0;
 	CloseSettings.ImageColor3 = Color3.fromRGB(245, 245, 245);
 	CreateRounded(CloseSettings, 3);
@@ -471,7 +471,7 @@ function Update:Window(Config)
 	SettingsButton.AnchorPoint = Vector2.new(1, 0.5);
 	SettingsButton.Position = UDim2.new(1, -85, 0.5, 0);
 	SettingsButton.Size = UDim2.new(0, 20, 0, 20);
-	SettingsButton.Image = "rbxassetid://10734950020";
+	SettingsButton.Image = "rbxasset://10734950020";
 	SettingsButton.ImageTransparency = 0;
 	SettingsButton.ImageColor3 = Color3.fromRGB(245, 245, 245);
 	CreateRounded(SettingsButton, 3);
@@ -550,7 +550,7 @@ function Update:Window(Config)
 		Checkbox.AnchorPoint = Vector2.new(0, 0.5);
 		Checkbox.Position = UDim2.new(0, 30, 0.5, 0);
 		Checkbox.Size = UDim2.new(0, 20, 0, 20);
-		Checkbox.Image = "rbxassetid://10709790644";
+		Checkbox.Image = "rbxasset://10709790644";
 		Checkbox.ImageTransparency = 1;
 		Checkbox.ImageColor3 = Color3.fromRGB(245, 245, 245);
 		CreateRounded(Checkbox, 5);
@@ -620,7 +620,7 @@ function Update:Window(Config)
 	Tab.BackgroundColor3 = Color3.fromRGB(45, 45, 45);
 	Tab.Position = UDim2.new(0, 8, 0, Top.Size.Y.Offset);
 	Tab.BackgroundTransparency = 1;
-	Tab.Size = UDim2.new(0, WindowConfig.TabWidth, Config.Size.Y.Scale, Config.Size.Y.Offset - Top.Size.Y.Offset - 8);
+	Tab.Size = UDim2.new(0, WindowConfig.TabWth, Config.Size.Y.Scale, Config.Size.Y.Offset - Top.Size.Y.Offset - 8);
 	local BtnStroke = Instance.new("UIStroke");
 	local ScrollTab = Instance.new("ScrollingFrame");
 	ScrollTab.Name = "ScrollTab";
@@ -692,7 +692,7 @@ function Update:Window(Config)
 			OutlineMain.Size = UDim2.new(0, math.clamp(Input.Position.X - Main.AbsolutePosition.X + 15, WindowConfig.Size.X.Offset + 15, math.huge), 0, math.clamp(Input.Position.Y - Main.AbsolutePosition.Y + 15, WindowConfig.Size.Y.Offset + 15, math.huge));
 			Main.Size = UDim2.new(0, math.clamp(Input.Position.X - Main.AbsolutePosition.X, WindowConfig.Size.X.Offset, math.huge), 0, math.clamp(Input.Position.Y - Main.AbsolutePosition.Y, WindowConfig.Size.Y.Offset, math.huge));
 			Page.Size = UDim2.new(0, math.clamp(Input.Position.X - Page.AbsolutePosition.X - 8, WindowConfig.Size.X.Offset - Tab.Size.X.Offset - 25, math.huge), 0, math.clamp(Input.Position.Y - Page.AbsolutePosition.Y - 8, WindowConfig.Size.Y.Offset - Top.Size.Y.Offset - 10, math.huge));
-			Tab.Size = UDim2.new(0, WindowConfig.TabWidth, 0, math.clamp(Input.Position.Y - Tab.AbsolutePosition.Y - 8, WindowConfig.Size.Y.Offset - Top.Size.Y.Offset - 10, math.huge));
+			Tab.Size = UDim2.new(0, WindowConfig.TabWth, 0, math.clamp(Input.Position.Y - Tab.AbsolutePosition.Y - 8, WindowConfig.Size.Y.Offset - Top.Size.Y.Offset - 10, math.huge));
 		end;
 	end);
 	local uitab = {};
@@ -736,16 +736,16 @@ function Update:Window(Config)
 		Title.TextTransparency = 0.4;
 		Title.TextSize = 14;
 		Title.TextXAlignment = Enum.TextXAlignment.Left;
-		local IDK = Instance.new("ImageLabel");
-		IDK.Name = "IDK";
-		IDK.Parent = TabButton;
-		IDK.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
-		IDK.BackgroundTransparency = 1;
-		IDK.ImageTransparency = 0.3;
-		IDK.Position = UDim2.new(0, 7, 0.5, 0);
-		IDK.Size = UDim2.new(0, 15, 0, 15);
-		IDK.AnchorPoint = Vector2.new(0, 0.5);
-		IDK.Image = img;
+		local K = Instance.new("ImageLabel");
+		K.Name = "K";
+		K.Parent = TabButton;
+		K.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
+		K.BackgroundTransparency = 1;
+		K.ImageTransparency = 0.3;
+		K.Position = UDim2.new(0, 7, 0.5, 0);
+		K.Size = UDim2.new(0, 15, 0, 15);
+		K.AnchorPoint = Vector2.new(0, 0.5);
+		K.Image = img;
 		CreateRounded(TabButton, 6);
 		local MainFramePage = Instance.new("ScrollingFrame");
 		MainFramePage.Name = text .. "_Page";
@@ -775,7 +775,7 @@ function Update:Window(Config)
 					(TweenService:Create(v.SelectedTab, TweenInfo.new(0, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 						Size = UDim2.new(0, 3, 0, 0)
 					})):Play();
-					(TweenService:Create(v.IDK, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+					(TweenService:Create(v.K, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 						ImageTransparency = 0.4
 					})):Play();
 					(TweenService:Create(v.Title, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
@@ -788,7 +788,7 @@ function Update:Window(Config)
 				(TweenService:Create(SelectedTab, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 					Size = UDim2.new(0, 3, 0, 15)
 				})):Play();
-				(TweenService:Create(IDK, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+				(TweenService:Create(K, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 					ImageTransparency = 0
 				})):Play();
 				(TweenService:Create(Title, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
@@ -811,7 +811,7 @@ function Update:Window(Config)
 					(TweenService:Create(v.SelectedTab, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 						Size = UDim2.new(0, 3, 0, 15)
 					})):Play();
-					(TweenService:Create(v.IDK, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+					(TweenService:Create(v.K, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 						ImageTransparency = 0.4
 					})):Play();
 					(TweenService:Create(v.Title, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
@@ -824,7 +824,7 @@ function Update:Window(Config)
 				(TweenService:Create(SelectedTab, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 					Size = UDim2.new(0, 3, 0, 15)
 				})):Play();
-				(TweenService:Create(IDK, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+				(TweenService:Create(K, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 					ImageTransparency = 0
 				})):Play();
 				(TweenService:Create(Title, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
@@ -848,18 +848,18 @@ function Update:Window(Config)
 				OutlineMain:TweenPosition(UDim2.new(0.5, 0, 0.45, 0), "Out", "Quad", 0.2, true);
 				Main:TweenSize(UDim2.new(1, 0, 1, 0), "Out", "Quad", 0.4, true, function()
 					Page:TweenSize(UDim2.new(0, Main.AbsoluteSize.X - Tab.AbsoluteSize.X - 25, 0, Main.AbsoluteSize.Y - Top.AbsoluteSize.Y - 10), "Out", "Quad", 0.4, true);
-					Tab:TweenSize(UDim2.new(0, WindowConfig.TabWidth, 0, Main.AbsoluteSize.Y - Top.AbsoluteSize.Y - 10), "Out", "Quad", 0.4, true);
+					Tab:TweenSize(UDim2.new(0, WindowConfig.TabWth, 0, Main.AbsoluteSize.Y - Top.AbsoluteSize.Y - 10), "Out", "Quad", 0.4, true);
 				end);
 				OutlineMain:TweenSize(UDim2.new(1, -10, 1, -10), "Out", "Quad", 0.4, true);
-				ResizeButton.Image = "rbxassetid://10734895698";
+				ResizeButton.Image = "rbxasset://10734895698";
 			else
 				defaultSize = true;
 				Main:TweenSize(UDim2.new(0, WindowConfig.Size.X.Offset, 0, WindowConfig.Size.Y.Offset), "Out", "Quad", 0.4, true, function()
 					Page:TweenSize(UDim2.new(0, Main.AbsoluteSize.X - Tab.AbsoluteSize.X - 25, 0, Main.AbsoluteSize.Y - Top.AbsoluteSize.Y - 10), "Out", "Quad", 0.4, true);
-					Tab:TweenSize(UDim2.new(0, WindowConfig.TabWidth, 0, Main.AbsoluteSize.Y - Top.AbsoluteSize.Y - 10), "Out", "Quad", 0.4, true);
+					Tab:TweenSize(UDim2.new(0, WindowConfig.TabWth, 0, Main.AbsoluteSize.Y - Top.AbsoluteSize.Y - 10), "Out", "Quad", 0.4, true);
 				end);
 				OutlineMain:TweenSize(UDim2.new(0, WindowConfig.Size.X.Offset + 15, 0, WindowConfig.Size.Y.Offset + 15), "Out", "Quad", 0.4, true);
-				ResizeButton.Image = "rbxassetid://10734886735";
+				ResizeButton.Image = "rbxasset://10734886735";
 			end;
 		end);
 		local main = {};
@@ -886,7 +886,7 @@ function Update:Window(Config)
 			ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5);
 			ImageLabel.Position = UDim2.new(0.5, 0, 0.5, 0);
 			ImageLabel.Size = UDim2.new(0, 15, 0, 15);
-			ImageLabel.Image = "rbxassetid://10734898355";
+			ImageLabel.Image = "rbxasset://10734898355";
 			ImageLabel.ImageTransparency = 0;
 			ImageLabel.ImageColor3 = Color3.fromRGB(255, 255, 255);
 			CreateRounded(TextButton, 4);
@@ -924,7 +924,7 @@ function Update:Window(Config)
 			ArrowRight.AnchorPoint = Vector2.new(0, 0.5);
 			ArrowRight.Position = UDim2.new(0, 0, 0.5, 0);
 			ArrowRight.Size = UDim2.new(0, 15, 0, 15);
-			ArrowRight.Image = "rbxassetid://10709768347";
+			ArrowRight.Image = "rbxasset://10709768347";
 			ArrowRight.ImageTransparency = 0;
 			ArrowRight.ImageColor3 = Color3.fromRGB(255, 255, 255);
 			Black.Name = "Black";
@@ -1066,7 +1066,7 @@ function Update:Window(Config)
 			local UIListLayout = Instance.new("UIListLayout");
 			local UIPadding = Instance.new("UIPadding");
 			local DropButton = Instance.new("TextButton");
-			local HideButton = Instance.new("TextButton");
+			local HeButton = Instance.new("TextButton");
 			local SelectItems = Instance.new("TextButton");
 			local DropImage = Instance.new("ImageLabel");
 			local UIStroke = Instance.new("UIStroke");
@@ -1113,7 +1113,7 @@ function Update:Window(Config)
 			ArrowDown.AnchorPoint = Vector2.new(1, 0);
 			ArrowDown.Position = UDim2.new(1, -110, 0, 10);
 			ArrowDown.Size = UDim2.new(0, 20, 0, 20);
-			ArrowDown.Image = "rbxassetid://10709790948";
+			ArrowDown.Image = "rbxasset://10709790948";
 			ArrowDown.ImageTransparency = 0;
 			ArrowDown.ImageColor3 = Color3.fromRGB(255, 255, 255);
 			CreateRounded(SelectItems, 5);
@@ -1323,13 +1323,13 @@ function Update:Window(Config)
 			end;
 			return dropfunc;
 		end;
-		function main:Slider(text, min, max, set, callback)
-			local Slider = Instance.new("Frame");
-			local slidercorner = Instance.new("UICorner");
-			local sliderr = Instance.new("Frame");
-			local sliderrcorner = Instance.new("UICorner");
+		function main:Sler(text, min, max, set, callback)
+			local Sler = Instance.new("Frame");
+			local slercorner = Instance.new("UICorner");
+			local slerr = Instance.new("Frame");
+			local slerrcorner = Instance.new("UICorner");
 			local ImageLabel = Instance.new("ImageLabel");
-			local SliderStroke = Instance.new("UIStroke");
+			local SlerStroke = Instance.new("UIStroke");
 			local Title = Instance.new("TextLabel");
 			local ValueText = Instance.new("TextLabel");
 			local HAHA = Instance.new("Frame");
@@ -1340,29 +1340,29 @@ function Update:Window(Config)
 			local barcorner = Instance.new("UICorner");
 			local circlebar = Instance.new("Frame");
 			local UICorner = Instance.new("UICorner");
-			local slidervalue = Instance.new("Frame");
+			local slervalue = Instance.new("Frame");
 			local valuecorner = Instance.new("UICorner");
 			local TextBox = Instance.new("TextBox");
 			local UICorner_2 = Instance.new("UICorner");
 			local posto = Instance.new("UIStroke");
-			Slider.Name = "Slider";
-			Slider.Parent = MainFramePage;
-			Slider.BackgroundColor3 = _G.Primary;
-			Slider.BackgroundTransparency = 1;
-			Slider.Size = UDim2.new(1, 0, 0, 35);
-			slidercorner.CornerRadius = UDim.new(0, 5);
-			slidercorner.Name = "slidercorner";
-			slidercorner.Parent = Slider;
-			sliderr.Name = "sliderr";
-			sliderr.Parent = Slider;
-			sliderr.BackgroundColor3 = _G.Primary;
-			sliderr.BackgroundTransparency = 0.8;
-			sliderr.Position = UDim2.new(0, 0, 0, 0);
-			sliderr.Size = UDim2.new(1, 0, 0, 35);
-			sliderrcorner.CornerRadius = UDim.new(0, 5);
-			sliderrcorner.Name = "sliderrcorner";
-			sliderrcorner.Parent = sliderr;
-			Title.Parent = sliderr;
+			Sler.Name = "Sler";
+			Sler.Parent = MainFramePage;
+			Sler.BackgroundColor3 = _G.Primary;
+			Sler.BackgroundTransparency = 1;
+			Sler.Size = UDim2.new(1, 0, 0, 35);
+			slercorner.CornerRadius = UDim.new(0, 5);
+			slercorner.Name = "slercorner";
+			slercorner.Parent = Sler;
+			slerr.Name = "slerr";
+			slerr.Parent = Sler;
+			slerr.BackgroundColor3 = _G.Primary;
+			slerr.BackgroundTransparency = 0.8;
+			slerr.Position = UDim2.new(0, 0, 0, 0);
+			slerr.Size = UDim2.new(1, 0, 0, 35);
+			slerrcorner.CornerRadius = UDim.new(0, 5);
+			slerrcorner.Name = "slerrcorner";
+			slerrcorner.Parent = slerr;
+			Title.Parent = slerr;
 			Title.BackgroundColor3 = Color3.fromRGB(150, 150, 150);
 			Title.BackgroundTransparency = 1;
 			Title.Position = UDim2.new(0, 15, 0.5, 0);
@@ -1385,7 +1385,7 @@ function Update:Window(Config)
 			ValueText.TextSize = 12;
 			ValueText.TextXAlignment = Enum.TextXAlignment.Right;
 			bar.Name = "bar";
-			bar.Parent = sliderr;
+			bar.Parent = slerr;
 			bar.BackgroundColor3 = Color3.fromRGB(200, 200, 200);
 			bar.Size = UDim2.new(0, 100, 0, 4);
 			bar.Position = UDim2.new(1, -10, 0.5, 0);
@@ -1412,7 +1412,7 @@ function Update:Window(Config)
 			UICorner.Parent = circlebar;
 			valuecorner.CornerRadius = UDim.new(0, 2);
 			valuecorner.Name = "valuecorner";
-			valuecorner.Parent = slidervalue;
+			valuecorner.Parent = slervalue;
 			local mouse = game.Players.LocalPlayer:GetMouse();
 			local uis = game:GetService("UserInputService");
 			if Value == nil then
@@ -1527,7 +1527,7 @@ function Update:Window(Config)
 			ImageLabel.Position = UDim2.new(0, 10, 0.5, 0);
 			ImageLabel.Size = UDim2.new(0, 14, 0, 14);
 			ImageLabel.AnchorPoint = Vector2.new(0, 0.5);
-			ImageLabel.Image = "rbxassetid://10723415903";
+			ImageLabel.Image = "rbxasset://10723415903";
 			ImageLabel.ImageColor3 = Color3.fromRGB(200, 200, 200);
 			function labelfunc:Set(newtext)
 				Label.Text = newtext;
